@@ -8,13 +8,10 @@ A python frontend for an arduino AD8232 based EKG. Noise reduction and baseline 
 
 
 ---
-## Table of Contents (Optional)
-
-> If your `README` has a lot of info, section headers might be nice.
+## Table of Contents 
 
 - [Intro](#intro)
 - [Installation](#installation)
-- [Features](#features)
 - [Contributing](#contributing)
 - [Team](#team)
 - [FAQ](#faq)
@@ -91,17 +88,16 @@ Serial.println(analogRead(A0));
 ## FAQ
 
 - **How do I do *specifically* so and so?**
-    - No problem! Just do this.
+    - No problem! Just do this
+    
+    (WIP)
 
 ---
 
 ## Support
 
-Reach out to me at one of the following places!
-
-- Website at <a href="http://fvcproductions.com" target="_blank">`fvcproductions.com`</a>
-- Twitter at <a href="http://twitter.com/fvcproductions" target="_blank">`@fvcproductions`</a>
-- Insert more social links here.
+To come.
+Will actually try to comment some of my code sorry!
 
 ---
 
