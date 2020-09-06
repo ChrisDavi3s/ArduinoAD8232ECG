@@ -20,11 +20,20 @@
 
 ---
 
-##Introduction
+## Introduction
 
-A quick look at where to place the electrodes:
+- Electode Placement:
 
 ![Image of Placement](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/electrode%20placement.png)
+
+- A quick tour:
+
+![Image of Gui](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/gui.png)
+(1)
+(2)
+(3)
+(4)
+(5)
 
 ---
 
