@@ -8,6 +8,7 @@
 
 > If your `README` has a lot of info, section headers might be nice.
 
+- [Intro](#intro)
 - [Installation](#installation)
 - [Features](#features)
 - [Contributing](#contributing)
@@ -19,60 +20,34 @@
 
 ---
 
-***INSERT ANOTHER GRAPHIC HERE***
+##Introduction
 
-[![INSERT YOUR GRAPHIC HERE](http://i.imgur.com/dt8AUb6.png)]()
+A quick look at where to place the electrodes:
 
-- Most people will glance at your `README`, *maybe* star it, and leave
-- Ergo, people should understand instantly what your project is about based on your repo
-
-> Tips
-
-- HAVE WHITE SPACE
-- MAKE IT PRETTY
-- GIFS ARE REALLY COOL
-
-> GIF Tools
-
-- Use <a href="http://recordit.co/" target="_blank">**Recordit**</a> to create quicks screencasts of your desktop and export them as `GIF`s.
-- For terminal sessions, there's <a href="https://github.com/chjj/ttystudio" target="_blank">**ttystudio**</a> which also supports exporting `GIF`s.
-
-**Recordit**
-
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
-
-**ttystudio**
-
-![ttystudio GIF](https://raw.githubusercontent.com/chjj/ttystudio/master/img/example.gif)
+![Image of Placement](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/electrode%20placement.png)
 
 ---
 
 ## Installation
 
+**The arduino side**
+
 - Flash the .ino to your arduino. Ensure that all the data pins are correct.
+These three lines will need changing depending on which pins you decide to use. If in trouble just search google for a AD8232 arduino wiring diagram :)
 
 ```c++
 pinMode(10, INPUT); // Setup for leads off detection LO +
 pinMode(11, INPUT); // Setup for leads off detection LO -
 Serial.println(analogRead(A0));
 ```
-These three lines will need changing depending on which pins you decide to use. If in trouble just search google for a AD8232 arduino wiring diagram :)
 
--Anaconda navigator was installed for my setup. Run the 
+**The python side**
+
+- Anaconda navigator was installed for my setup. Run the 
 
 
 - All the `code` required to get started
 - Images of what it should look like
-
----
-
-## Features
-## Usage (Optional)
-## Documentation (Optional)
-## Tests (Optional)
-
-- Going into more detail on code and technologies used
-- I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
 
 ---
 
