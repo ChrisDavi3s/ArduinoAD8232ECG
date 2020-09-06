@@ -29,11 +29,12 @@
 - A quick tour:
 
 ![Image of Gui](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/gui.PNG)
-(1)
-(2)
-(3)
-(4)
-(5)
+
+1.  Select the COM port the arduino is using. Look in device manager under ports.
+1.  This will start/stop monitoring the selected port. This does not record anything. You should see data in (4) if connected correctly.
+1.  Starts recording of data. When stop is clicked a prompt will come up to save the data as an excel file. This data has been processed. Try not to record for years I have zero idea how well this copes with *large* data sets.
+1.  Live graph of incoming raw unfiltered data. Yes it looks choppy but is only intended to be a viewfinder and not the final data.
+1.  Close the program and kill any serial connection. 
 
 ---
 
