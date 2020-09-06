@@ -3,23 +3,21 @@
 
 > A python gui with recording and data manipulation for an arduino AD8232 based ekg.
 
+---
+## Table of Contents (Optional)
 
-**Badges will go here**
+> If your `README` has a lot of info, section headers might be nice.
 
-- build status
-- issues (waffle.io maybe)
-- devDependencies
-- npm package
-- coverage
-- slack
-- downloads
-- gitter chat
-- license
-- etc.
+- [Installation](#installation)
+- [Features](#features)
+- [Contributing](#contributing)
+- [Team](#team)
+- [FAQ](#faq)
+- [Support](#support)
+- [License](#license)
 
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square)](https://gemnasium.com/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square)](https://codeclimate.com/github/badges/badgerbadgerbadger) [![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/pulls) [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
 
-- For more on these wonderful ~~badgers~~ badges, refer to <a href="http://badges.github.io/badgerbadgerbadger/" target="_blank">`badgerbadgerbadger`</a>.
+---
 
 ***INSERT ANOTHER GRAPHIC HERE***
 
@@ -49,20 +47,7 @@
 
 ---
 
-## Table of Contents (Optional)
 
-> If your `README` has a lot of info, section headers might be nice.
-
-- [Installation](#installation)
-- [Features](#features)
-- [Contributing](#contributing)
-- [Team](#team)
-- [FAQ](#faq)
-- [Support](#support)
-- [License](#license)
-
-
----
 
 ## Example (Optional)
 
@@ -80,6 +65,18 @@ let generateProject = project => {
 ---
 
 ## Installation
+
+- Flash the .ino to your arduino. Ensure that all the data pins are correct.
+
+```c++
+pinMode(10, INPUT); // Setup for leads off detection LO +
+pinMode(11, INPUT); // Setup for leads off detection LO -
+Serial.println(analogRead(A0));
+```c++
+
+These three lines will need changing depending on which pins you decide to use. If in trouble just search google for a AD8232 arduino wiring diagram :)
+
+
 
 - All the `code` required to get started
 - Images of what it should look like
