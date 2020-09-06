@@ -48,6 +48,9 @@ These three lines will need changing depending on which pins you decide to use. 
 
 ![Image of Wiring](https://github.com/ChrisDavi3s/ArduinoAD8232ECG/blob/master/img/setup.jpg)
 
+This image is stolen (under licence conditions) from the brilliant rescource at https://learn.sparkfun.com/tutorials/ad8232-heart-rate-monitor-hookup-guide/all
+I would highly reccomend checking this out if you are doing a similar project.
+
 ```c++
 pinMode(10, INPUT); // Setup for leads off detection LO +
 pinMode(11, INPUT); // Setup for leads off detection LO -
