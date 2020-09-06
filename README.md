@@ -28,7 +28,7 @@
 
 - A quick tour:
 
-![Image of Gui](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/gui.png)
+![Image of Gui](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/gui.PNG)
 (1)
 (2)
 (3)
