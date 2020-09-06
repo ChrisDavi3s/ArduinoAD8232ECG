@@ -1,9 +1,9 @@
 
-# ArduinoAD8232EKG
+# ArduinoAD8232ECG
 
-A python frontend for an arduino AD8232 based EKG. Noise reduction and baseline correction are included to produce plots such as this:
+A python frontend for an arduino AD8232 based ECG. Noise reduction and baseline correction are included to produce plots such as this:
 
-![Image of HR](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/img/HR.PNG)
+![Image of HR](https://github.com/ChrisDavi3s/ArduinoAD8232ECG/blob/master/img/HR.PNG)
 
 
 
@@ -25,11 +25,11 @@ A python frontend for an arduino AD8232 based EKG. Noise reduction and baseline 
 
 - Electode Placement:
 
-![Image of Placement](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/img/electrode%20placement.png)
+![Image of Placement](https://github.com/ChrisDavi3s/ArduinoAD8232ECG/blob/master/img/electrode%20placement.png)
 
 - A quick tour:
 
-![Image of Gui](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/img/gui.PNG)
+![Image of Gui](https://github.com/ChrisDavi3s/ArduinoAD8232ECG/blob/master/img/gui.PNG)
 
 1.  Select the COM port the arduino is using. Look in device manager under ports.
 1.  This will start/stop monitoring the selected port. This does not record anything. You should see data in (4) if connected correctly.
@@ -46,7 +46,7 @@ A python frontend for an arduino AD8232 based EKG. Noise reduction and baseline 
 - Flash the .ino to your arduino. Ensure that all the data pins are correct.
 These three lines will need changing depending on which pins you decide to use. See wiring diagram below.
 
-![Image of Wiring](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/img/setup.jpg)
+![Image of Wiring](https://github.com/ChrisDavi3s/ArduinoAD8232ECG/blob/master/img/setup.jpg)
 
 ```c++
 pinMode(10, INPUT); // Setup for leads off detection LO +
@@ -72,7 +72,7 @@ Serial.println(analogRead(A0));
     - 🍴 Fork this repo!
 
 - **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/ChrisDavi3s/arduino_ekg_gui.git`
+    - 👯 Clone this repo to your local machine using `https://github.com/ChrisDavi3s/ArduinoAD8232ECG.git`
 
 ### Step 2
 
@@ -80,7 +80,7 @@ Serial.println(analogRead(A0));
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/ChrisDavi3s/arduino_ekg_gui/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
+- 🔃 Create a new pull request using <a href="https://github.com/ChrisDavi3s/ArduinoAD8232ECG/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
 
 ---
 
