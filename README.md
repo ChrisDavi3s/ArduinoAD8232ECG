@@ -1,9 +1,7 @@
 
 # ArduinoAD8232EKG
 
-> A python gui with recording and data manipulation for an arduino AD8232 based ekg.
-
-Easily produce EKG plots in excel:
+A python frontend for an arduino AD8232 based EKG. Noise reduction and baseline correction are included to produce plots such as this:
 
 ![Image of HR](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/HR.PNG)
 
