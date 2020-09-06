@@ -3,7 +3,7 @@
 
 A python frontend for an arduino AD8232 based EKG. Noise reduction and baseline correction are included to produce plots such as this:
 
-![Image of HR](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/HR.PNG)
+![Image of HR](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/img/HR.PNG)
 
 
 
@@ -25,11 +25,11 @@ A python frontend for an arduino AD8232 based EKG. Noise reduction and baseline 
 
 - Electode Placement:
 
-![Image of Placement](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/electrode%20placement.png)
+![Image of Placement](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/img/electrode%20placement.png)
 
 - A quick tour:
 
-![Image of Gui](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/gui.PNG)
+![Image of Gui](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/img/gui.PNG)
 
 1.  Select the COM port the arduino is using. Look in device manager under ports.
 1.  This will start/stop monitoring the selected port. This does not record anything. You should see data in (4) if connected correctly.
@@ -44,7 +44,9 @@ A python frontend for an arduino AD8232 based EKG. Noise reduction and baseline 
 **The arduino side**
 
 - Flash the .ino to your arduino. Ensure that all the data pins are correct.
-These three lines will need changing depending on which pins you decide to use. If in trouble just search google for a AD8232 arduino wiring diagram :)
+These three lines will need changing depending on which pins you decide to use. See wiring diagram below.
+
+![Image of Wiring](https://github.com/ChrisDavi3s/arduino_ekg_gui/blob/master/img/setup.jpg)
 
 ```c++
 pinMode(10, INPUT); // Setup for leads off detection LO +
