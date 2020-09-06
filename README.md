@@ -54,17 +54,15 @@ Serial.println(analogRead(A0));
 
 **The python side**
 
-- Anaconda navigator was installed for my setup. Run the 
+- Anaconda navigator was installed for my setup. Run the .py however you want, in my case I ran it in visual code.
+- A few pakages might need installing. **todo** I will clean up the code to try to remove unused dependencies.
 
-
-- All the `code` required to get started
-- Images of what it should look like
 
 ---
 
 ## Contributing
 
-> To get started...
+> I'm new to git - this is very likely wrong.
 
 ### Step 1
 
@@ -72,7 +70,7 @@ Serial.println(analogRead(A0));
     - 🍴 Fork this repo!
 
 - **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
+    - 👯 Clone this repo to your local machine using `https://github.com/ChrisDavi3s/arduino_ekg_gui.git`
 
 ### Step 2
 
@@ -80,7 +78,7 @@ Serial.println(analogRead(A0));
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
+- 🔃 Create a new pull request using <a href="https://github.com/ChrisDavi3s/arduino_ekg_gui/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
 
 ---
 
