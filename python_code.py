@@ -1,10 +1,10 @@
 """
-This code is a GUI application for a heart rate monitor. It uses tkinter for the GUI, 
-matplotlib for plotting, and serial for communication with an Arduino board. 
-The application allows the user to select a COM port, start and stop the serial communication, 
-and record the data. The recorded data is processed using scipy and peakutils, 
-and then saved as an Excel file. The GUI is composed of a live plot of the data 
-and several buttons for controlling the application. 
+Este código es una aplicación GUI para un monitor de frecuencia cardíaca. Utiliza tkinter para la GUI,
+matplotlib para trazar y serial para comunicación con una placa Arduino.
+La aplicación permite al usuario seleccionar un puerto COM, iniciar y detener la comunicación serie,
+y registrar los datos. Los datos registrados se procesan utilizando scipy y peakutils,
+y luego se guarda como un archivo de Excel. La GUI se compone de una gráfica en vivo de los datos.
+y varios botones para controlar la aplicación.
 """
 import tkinter as tk
 from tkinter import ttk 
@@ -22,13 +22,13 @@ import xlwt
 import threading
 import time
 
-# Global variables
+# Variables Globales
 recording = False
 serialDataRecorded = []
 serialOpen = False
 global ser
 
-# List of available COM ports
+# Lista de puertos COM disponibles
 OptionList = [
     "--Select a COM port--", "0",
     "1",
@@ -41,16 +41,16 @@ serialData = [0] * 70
 
 def read_from_port(ser):
     """
-    Reads data from the serial port and appends it to serialData.
-    If recording is enabled, also appends the data to serialDataRecorded.
+    Lee datos del puerto serie y los agrega a serialData.
+     Si la grabación está habilitada, también agrega los datos a serialDataRecorded.
 
     Args:
-        ser (serial.Serial): The serial port object.
+         ser (serial.Serial): el objeto del puerto serie.
     """
     global serialOpen
     global serialData
     global serialDataRecorded
-    print('loop started')
+    print('bucle iniciado')
     while serialOpen == True:
         reading = float(ser.readline().strip())
         serialData.append(reading)
@@ -60,7 +60,7 @@ def read_from_port(ser):
         
 def startSerial():
     """
-    Opens the selected COM port and starts reading data from it.
+    Abre el puerto COM seleccionado y comienza a leer datos del mismo.
     """
     try:
         s =  var.get()
@@ -73,8 +73,8 @@ def startSerial():
         global thread
         thread = threading.Thread(target=read_from_port, args=(ser,))
         thread.start()
-        print('thread started')
-        connectText.set("Connected to COM" + s)
+        print('hilo iniciado')
+        connectText.set("Conectado a COM" + s)
         labelConnect.config(fg="green")
 
         return serialOpen
@@ -85,7 +85,7 @@ def startSerial():
     
 def kill_Serial():
     """
-    Closes the serial port.
+    Cierra el puerto serie.
     """
     try:
         global ser
@@ -93,20 +93,19 @@ def kill_Serial():
         serialOpen = False
         time.sleep(1)
         ser.close()
-        connectText.set("Not connected")
+        connectText.set("No conectado")
         labelConnect.config(fg="red")
 
-        print('serial closed')
+        print('serial cerrado')
     except:
-        connectText.set("Failed to end serial ")
+        connectText.set("No se pudo finalizar el serial ")
 
 
 def animate(i):
     """
-    Updates the live plot with the latest data from serialData.
-
-    Args:
-        i (int): The current frame number.
+    Actualiza el gráfico en vivo con los datos más recientes de los datos en serie. 
+        Args: i (int): 
+    el número de fotograma actual.
     """
     global serialData
     if len(serialData) > 70:
@@ -121,26 +120,26 @@ def animate(i):
 
 def startRecording():
     """
-    Enables recording of data from the serial port.
+    Permite grabar datos desde el puerto serie.t.
     """
     global recording
     if serialOpen:
         recording = True
-        recordText.set("Gravando . . . ")
+        recordText.set("Grabando . . . ")
         labelRecord.config(fg="red")
     else:
         messagebox.showinfo("Error", "Por favor inicie el monitor serial")
 
 def stopRecording():
     """
-    Disables recording of data from the serial port and processes the recorded data.
+    Desactiva la grabación de datos desde el puerto serie y procesa los datos grabados.
     """
     global recording
     global serialDataRecorded
     
     if recording == True:
         recording = False
-        recordText.set("No grabar ")
+        recordText.set("No grabar")
         labelRecord.config(fg="black")
         processRecording(serialDataRecorded)
         serialDataRecorded = []
@@ -149,11 +148,11 @@ def stopRecording():
 
 def processRecording(data):
     """
-    Processes the recorded data by applying a Savitzky-Golay filter and baseline correction,
-    and saves the processed data as an Excel file.
+    Processes los datos registrados aplicando un filtro Savitzky-Golay y una corrección de línea de base,
+     y guarda los datos procesados como un archivo de Excel.
 
     Args:
-        data (list): The recorded data.
+        data (list): Los datos registrados.
     """
     z = scipy.signal.savgol_filter(data, 11, 3)
     data2 = np.asarray(z,dtype=np.float32)
@@ -174,13 +173,13 @@ def processRecording(data):
     
     book.save(directory)
 
-# Create the GUI window
+# Crear la ventana GUI
 window = tk.Tk()
-window.title("Heart Rate Monitor v0.1")
+window.title("Monitor de frecuencia cardíaca v0.1")
 window.rowconfigure(0, minsize=800, weight=1)
 window.columnconfigure(1, minsize=800, weight=1)
 
-# Create the live plot
+# Crear el grafico en vivo
 fig = Figure(figsize=(6, 5), dpi=50)
 ax=fig.add_subplot(1,1,1)
 ax.set_xlim([0, 10])
@@ -188,12 +187,12 @@ ax.set_ylim([0, 150])
 canvas = FigureCanvasTkAgg(fig, master=window)
 canvas.draw()
 
-# Create the GUI elements
+# Crear los elementos GUI
 lbl_live = tk.Label( text="Live Data:", font=('Helvetica', 12), fg='red')
 fr_buttons = tk.Frame(window, relief=tk.RAISED, bd=2)
 
 connectText = tk.StringVar(window)
-connectText.set("Not connected")
+connectText.set("No conectado")
 labelConnect = tk.Label(fr_buttons, textvariable=connectText, font=('Helvetica', 12), fg='red')
 labelConnect.grid(row=0, column=0, sticky="ew",padx=10)
 
@@ -203,21 +202,21 @@ opt_com = tk.OptionMenu(fr_buttons, var, *OptionList)
 opt_com.config(width=20)
 opt_com.grid(row=1, column=0, sticky="ew", padx=10)
 
-btn_st_serial = tk.Button(fr_buttons, text="Open Serial", command=startSerial)
+btn_st_serial = tk.Button(fr_buttons, text="Abrir Serial", command=startSerial)
 btn_st_serial.grid(row=2, column=0, sticky="ew", padx=10, pady=5)
 
-btn_stop_serial = tk.Button(fr_buttons, text="Close Serial", command=kill_Serial)
+btn_stop_serial = tk.Button(fr_buttons, text="Cerrar Serial", command=kill_Serial)
 btn_stop_serial.grid(row=3, column=0, sticky="ew", padx=10, pady=5)
 
 recordText = tk.StringVar(window)
-recordText.set("Not Recording")
+recordText.set("No Grabando")
 labelRecord = tk.Label(fr_buttons, textvariable=recordText, font=('Helvetica', 12), fg='black')
 labelRecord.grid(row=4, column=0, sticky="ew",padx=10)
 
-btn_st_rec = tk.Button(fr_buttons, text="Start Recording", command=startRecording)
+btn_st_rec = tk.Button(fr_buttons, text="Iniciar Grabacion", command=startRecording)
 btn_st_rec.grid(row=5, column=0, sticky="ew", padx=10, pady=5)
 
-btn_stop_rec = tk.Button(fr_buttons, text="Stop Recording", command=stopRecording)
+btn_stop_rec = tk.Button(fr_buttons, text="Terminar Grabacion", command=stopRecording)
 btn_stop_rec.grid(row=6, column=0, sticky="ew", padx=10, pady=5)
 
 fr_buttons.grid(row=0, column=0, sticky="ns")
@@ -226,7 +225,7 @@ canvas.get_tk_widget().grid(row=0, column=1, sticky="nsew")
 
 # Close the serial port and destroy the window when quitting
 def ask_quit():
-    if tk.messagebox.askokcancel("Quit", "This will end the serial connection and close the application."):
+    if tk.messagebox.askokcancel("Terminar", "Esto finalizará la conexión en serial y cerrará la aplicación."):
         kill_Serial()
         window.destroy()
 
